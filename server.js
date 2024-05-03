@@ -1,8 +1,14 @@
 const express = require('express');
+require('dotenv').config();
 
 const app = express();
 
 // listen for requests
-app.listen(3001, () => {
-    console.log('Listening on port 3001');
+app.listen(process.env.PORT, () => {
+    console.log(`Listening on port ${process.env.PORT}`);
+})
+
+// get request with simple response on root
+app.get('/', (req, res) => {
+    res.send('Hello World');
 })
