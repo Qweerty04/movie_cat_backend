@@ -33,13 +33,13 @@ pnpm install
 
 ## Environment Variables
 
-To run the project, you need to set up a `.env` file in the root of the project directory with the following variables:
+Create a `.env` file in the root of the project directory with the below variables to run the project locally. For non-local environments, ensure the same variables are available in your configuration.
 
 ```plaintext
 PORT=4000
 PRODUCTION_MODE=no
-PROD_MONGO_URI=mongodb+srv://madina123:aPEJFANNm8F2fPxl@mernapp.ypjkarx.mongodb.net/movie_cat?retryWrites=true&w=majority&appName=MERNapp
-TEST_MONGO_URI=mongodb+srv://madina123:aPEJFANNm8F2fPxl@mernapp.ypjkarx.mongodb.net/movie_cat_dev?retryWrites=true&w=majority&appName=MERNapp
+PROD_MONGO_URI=<Your MongoDB Connection URI for Production Database>
+TEST_MONGO_URI=<Your MongoDB Connection URI for Development Database>
 RESET_TEST_DB=yes
 ```
 
@@ -49,7 +49,9 @@ RESET_TEST_DB=yes
 - **TEST_MONGO_URI**: The URI for the test MongoDB database.
 - **RESET_TEST_DB**: If set to `yes`, the test database will be wiped and repopulated with mock data.
 
-When running the server in production, you should set `PRODUCTION_MODE` to `yes` and use the `PROD_MONGO_URI` for database connections.
+When running the server in production, you should set `PRODUCTION_MODE` to `yes`.
+
+Here's how to get your Connection String/URI for MongoDB if you are using MongoDB Atlas: [Get Connection String](https://www.mongodb.com/docs/guides/atlas/connection-string/).
 
 ## Running the Server
 
@@ -82,14 +84,15 @@ This command will start the server in production mode, which will disable hot re
 
 This API provides endpoints to retrieve data on movies and actors from the MongoDB database. For a detailed overview of available endpoints, please refer to the API documentation.
 
-## Contributing
-
-No contributions accepted at the moment.
+- `get` **/api/movies/:id**: Retrieves all the detals about a single movie in JSON format.
+- `get` **/api/movies/search**: Retrieves all the movies matching the text passed as the `q` Query Parameter.
 
 ## License
 
 This project is licensed under the [Creative Commons Attribution License (CC BY)](https://creativecommons.org/licenses/by/4.0/). See the [LICENSE](LICENSE) file for more details.
 
----
+Created by **Madina Omarova**.
 
-Created by Madina Omarova.
+## Learn More
+
+If you have any questions, feel free to reach out to `madinaomarovart@gmail.com`.
