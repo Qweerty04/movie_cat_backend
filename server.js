@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const createMockData = require('./mock'); // Import the createMockData function from mock.js
 const movieRoutes = require('./routes/movies'); // Import the movie routes
+const cors = require('cors');
 
 const app = express();
 
@@ -29,6 +30,7 @@ async function startServer() {
         console.log('Connected to the database');
 
         // Middleware
+        app.use(cors());
         app.use(express.json()); // Parse JSON requests
 
         // Print requests for debugging
